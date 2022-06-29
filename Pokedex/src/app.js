@@ -7,6 +7,7 @@ const app = express()
 
 const pokemonRoutes = require('./routes/pokedexRoutes.js')
 const coachRoutes = require('./routes/coachRoutes')
+const colaboradorasRoutes = require('./routes/colaboradorasRoutes')
 
 // configuracao
 app.use(express.json())
@@ -26,5 +27,6 @@ app.use(function (req, res, next) {
 
 app.use("/coach", coachRoutes);
 app.use("/pokemon", pokemonRoutes);
+app.use(colaboradorasRoutes)
 
 module.exports = app;
