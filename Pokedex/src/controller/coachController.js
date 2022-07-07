@@ -42,11 +42,11 @@ const findAllCoaches = async (req, res) => {
         return res.status(403).send({ message: err.message });
       }
       const allCoaches = await CoachModel.find();
-      res.status(200).json(allCoaches);
+      res.status(200).send(allCoaches);
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: error.message });
+    res.status(500).send({ message: error.message });
   }
 };
 
